@@ -1,0 +1,38 @@
+﻿@model Practica2_U2_211G0353.Models.ViewModels.CarreraViewModel
+@{
+    Layout = "_Layout";
+}
+<h1>
+    <a class="btn" href="javascript: history.back()">&#x25c0; Regresar</a>
+    @Model.Carrera
+</h1>
+
+<h2>@Model.Plan</h2>
+<h2>Total de creditos: @Model.CreditosTotales</h2>
+<section class="reticula">
+    <table>
+        <thead>
+            <tr>
+                @foreach (var sem in Model.Semestres)
+                {
+                    <th>@sem.Semestre semestre</th>
+                }
+            </tr>
+        </thead>
+        <tr>
+            @foreach (var sem in Model.Semestres)
+            {
+                <td>
+                    @foreach (var mat in sem.Materias)
+                    {
+                        <div class="materia">
+                            <span class="clave">@mat.Clave</span>
+                            <span class="nombre">@mat.Nombre</span>
+                            <span class="tpc">@mat.Creditos-@mat.HorasPracticas-@mat.HorasTeoricas</span>
+                        </div>
+                    }
+                </td>
+            }
+        </tr>
+    </table>
+</section>

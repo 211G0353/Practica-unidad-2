@@ -1,0 +1,23 @@
+﻿@model Practica2_U2_211G0353.Models.Carreras
+@{
+    Layout = "_Layout";
+}
+<h1>
+    <a class="btn" href="javascript: history.back()">&#x25c0;  Regresar</a>
+
+    @Model.Nombre
+</h1>
+
+<div class="info">
+    <img src="~/images/@(Model.Id).jpg" />
+    <a class="btn" href="~/Mapa/@Model.Nombre">Ver mapa curricular</a>
+</div>
+<div class="info">
+    <dl>
+        <dt>Descripción:</dt>
+        <dd>@Model.Descripcion</dd>
+        <dd>@Model.Plan</dd>
+        <dt>Especialidad:</dt>
+        <dd>@Model.Especialidad</dd>
+    </dl>
+</div>
